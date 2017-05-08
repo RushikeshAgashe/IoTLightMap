@@ -12,8 +12,8 @@ try:
 except ImportError:
     HAVE_SK = False
 
-from common import *
-from myo_raw import MyoRaw
+from MYOlib.common import *
+from MYOlib.myo_raw import MyoRaw
 
 SUBSAMPLE = 3
 K = 15
