@@ -4,6 +4,7 @@ from main import LampSaver
 from user_data_server import main as live_data_server
 from MYOlib.gesture import main as gesture_main
 
+call(["gcc", "navigation.c", "-o", "nav", "-lm"])
 call(["bash", "./init.sh"])
 call(["bash", "./als_init"])
 
