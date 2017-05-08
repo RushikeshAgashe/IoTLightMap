@@ -43,7 +43,6 @@ struct points {
 };
 
 ////////////////////////////////
-//struct points* cmd_to_points(int argc, char *argv[]);
 struct gps getGPS(void);
 //void SendMyoDirection(int direction);
 struct dist_bearing FindDistance(double latHome, double lonHome, double latDest, double lonDest);
@@ -72,24 +71,6 @@ int main(void) {
 
   return 0;
 }
-
-
-
-//// Takes a list of float arguments passed through the command line (as characters)
-//// and turns it into an array of coords.
-//struct points* cmd_to_points(int num_of_coords, char *argv[]) {
-//    struct points* coords = malloc(num_of_coords * sizeof(struct points));
-//
-//
-//    for (int i = 0; i < num_of_coords; ++i) {
-//	coords[i].lat = atof(argv[(i<<1)+1]);
-//	coords[i].lng = atof(argv[(i<<1)+2]);
-//    }
-//
-//
-//    return coords;
-//}
-
 
 struct gps getGPS(void) {
 

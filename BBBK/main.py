@@ -138,15 +138,12 @@ class LampSaver(object):
         allcoords = []
 
         pprint.PrettyPrinter(indent=4).pprint(finalPath)
-        with open("./finalpath.csv", "w") as f:
+        with open("./vertices.csv", "w") as f:
             strs = ["%s, %s"%(str(x[0]),str(x[1])) for x in finalPath]
             full = "\n".join(strs)
             f.write(full)
 
-        for coord in finalPath:
-            allcoords.append(str(coord[0]))
-            allcoords.append(str(coord[1]))
-        call(["./nav"] + allcoords)
+        call(["./nav"])
 
     # ============
 
