@@ -1,7 +1,10 @@
 import asyncio
 import pdb
 from collections import namedtuple
-from aiocoap import *
+import CoAPlib.resource as resource
+import CoAPlib as aiocoap
+from CoAPlib import *
+
 import link_header as lh
 
 from CONSTANTS import *

@@ -9,6 +9,7 @@ from subprocess import call
 from CoAPlib import resource
 import CoAPlib as aiocoap
 from coap_client import *
+from CoAPlib import *
 from CONSTANTS import *
 
 import JSONlib.service_schema_library_json as tojson

@@ -17,7 +17,7 @@ def send_request(request, multiple_response):
     cl_sock.bind(('', SD_CLIENT_PORT))
     # Send to localhost, scapy sniffing on localhost
     # will forward to all edge nodes
-    cl_sock.sendto(request, (LOCALHOST, SD_SERVER_PORT))
+    cl_sock.sendto(request, ('8.8.8.8', SD_SERVER_PORT))
     t_end = time.time() + 5
     response = []
     while time.time() < t_end:
@@ -33,7 +33,7 @@ def send_request(request, multiple_response):
     return response
 
 
-def get_live_sensor_data(service_key=LIVE_DATA, multiple_response=False):
+def get_live_sensor_data(service_key=LIVE_DATA, multiple_response=True):
     req = json.dumps({SERVICE_KEY: service_key})
     if PYTHON_VERSION == 3.5:
         req = req.encode('utf-8')  # Comment out this line for python 2.7
@@ -49,6 +49,4 @@ def get_live_sensor_data(service_key=LIVE_DATA, multiple_response=False):
     return response
 
 if __name__ == "__main__":
-    while True:
-        resp = get_live_sensor_data()
-        time.sleep(5)
+    get_live_sensor_data()

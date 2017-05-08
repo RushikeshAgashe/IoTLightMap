@@ -1,9 +1,12 @@
 import asyncio
 import pdb
 
-import aiocoap.resource as resource
-import aiocoap
-from aiocoap import *
+#import aiocoap.resource as resource
+#import aiocoap
+import CoAPlib.resource as resource
+import CoAPlib as aiocoap
+from CoAPlib import *
+#from aiocoap import *
 
 from CONSTANTS import *
 
@@ -20,7 +23,7 @@ class LightHistoryService(resource.Resource):
 
     async def render_get(self, request):
         payload = request.payload
-        print("{0} Received request = {1}".format(self.rt, payload))
+        #print("{0} Received request = {1}".format(self.rt, payload))
 
         request = request.payload.decode('utf-8')
         request = toraw.light_history_service_request_to_raw_dict(request)
@@ -28,7 +31,7 @@ class LightHistoryService(resource.Resource):
         resp = tojson.light_history_service_response_to_json(lights)
         resp = bytes(resp, 'utf-8')
 
-        print("{0} Sending response = {1}".format(self.rt, resp))
+        #print("{0} Sending response = {1}".format(self.rt, resp))
         return aiocoap.Message(payload=resp)
 
     def get_link_description(self):
