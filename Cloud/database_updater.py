@@ -3,7 +3,7 @@ import csv
 import sqlite3
 from random import randint
 import sys
-database = 'RandomData.db'
+database = 'ZeroInitialized.db'
 def eucledian_dist(x,y):
     temp = location[0][0]- float(x)
     ans1 = math.pow(temp,2)
@@ -29,7 +29,7 @@ for i in range(0,len(waypoints)):
 
 test_location = [waypoints[randint(0,430)]]
 test_val = randint(0,255)
-test_timesegment = str(604).zfill(4)
+test_timesegment = str(sys.argv[4]).zfill(4)
 
 ## These should be taken from user input
 location = [(float(sys.argv[1]),float(sys.argv[2]))]

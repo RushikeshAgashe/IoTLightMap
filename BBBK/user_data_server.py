@@ -10,17 +10,16 @@ from CONSTANTS import data_, LIVE_DATA
 
 def read_gps_value():
     time.sleep(1)
-    return 34.34, 38.38, 600
-
+    return 34.772786, -78.674713,600
 
 def read_als_value():
     time.sleep(1)
-    return 99, 88
+    return 120, 88
 
 
 def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
-    sock.bind((HOST, SD_SERVER_PORT))
+    sock.bind((HOST, 60010))
     while True:
         try:
             data, cl_addr = sock.recvfrom(1024) # buffer size is 1024 bytes
@@ -31,6 +30,7 @@ def main():
             if request[SERVICE_KEY] == LIVE_DATA:
                 # TODO: Read the actual sensor values
                 lat, long, time = read_gps_value()
+                print (lat, long, time)
                 als, led = read_als_value()
                 resp = data_(lat, long, als, led, time)
                 resp = json.dumps(resp)

@@ -10,6 +10,7 @@ SERVICE_KEY = "service_key"
 SERVICE_IP_ADDR = "service_IP_addr"
 SERVICE_PORT = "service_port"
 
+#SD_SERVER_PORT_LIVE = 60011
 _GET = "GET"
 data_ = namedtuple("data", "lat, long, als, led, time")
 
@@ -37,6 +38,7 @@ port_mapping = {
     }
 
 CORE_ADDRESS = "152.14.87.22"
+#BROADCAST_ADDRESS = "192.168.1.255"
 BROADCAST_ADDRESS = "152.14.87.22"
 PATH_FINDER_SERVER_IP = "152.14.87.22"
 LIGHT_HISTORY_SERVER_IP = "152.14.87.22"
