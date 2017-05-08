@@ -20,7 +20,7 @@ from sd_client import discover_all_paths_finder_service, discover_history_servic
 test_timestamp = 936
 class LampSaver(object):
     def __init__(self, start = [35.773637, -78.674057], \
-                       end = [35.768571, -78.678672], \
+                       end = [35.768768, -78.677009], \
                        debug = False):
         self.start = start
         self.end = end

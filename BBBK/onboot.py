@@ -5,13 +5,13 @@ from user_data_server import main as live_data_server
 from MYOlib.gesture import main as gesture_main
 
 call(["gcc", "navigation.c", "-o", "nav", "-lm"])
-call(["bash", "./init.sh"])
-call(["bash", "./als_init"])
+#call(["bash", "./init.sh"])
+#call(["bash", "./als_init"])
 
-p3 = threading.Thread(target=gesture_main)
-p3.start()
+#p3 = threading.Thread(target=gesture_main)
+#p3.start()
 
-ls = LampSaver()
+ls = LampSaver(debug=True)
 p1 = threading.Thread(target=ls.main)
 p1.start()
 

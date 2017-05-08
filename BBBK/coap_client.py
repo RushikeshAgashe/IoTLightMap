@@ -10,6 +10,9 @@ import link_header as lh
 from CONSTANTS import *
 uri_ = namedtuple("uri_", "uri, code")
 
+'''
+Internal
+'''
 async def _coap_discover_resources(calling_obj, ip, port):
     """
     Discovers resources hosted on a CoAP server with IP address as ip and port as port
@@ -41,6 +44,9 @@ async def _coap_discover_resources(calling_obj, ip, port):
     print("Coap Client: Discovered Resources: {0}\n".format(calling_obj.response))
     return res
 
+'''
+Internal
+'''
 async def _client_get(calling_obj, uri, payload):
     with open("client_requests.txt", "a") as requestfile:
         requestfile.write("NEW REQUEST: ")
