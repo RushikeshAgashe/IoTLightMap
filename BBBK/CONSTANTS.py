@@ -1,4 +1,5 @@
 import sys
+from collections import namedtuple
 
 PYTHON_VERSION = float(sys.version[:3])
 
@@ -10,10 +11,14 @@ SERVICE_IP_ADDR = "service_IP_addr"
 SERVICE_PORT = "service_port"
 
 _GET = "GET"
-
+data_ = namedtuple("data", "lat, long, als, led, time")
 
 IF_NAME = "wlan0"
 LOCAL_NETWORK = '192.168.1.0/24'
+
+LIVE_DATA = "live_data"
+LOCALHOST = "127.0.0.1"
+
 
 ALL_PATHS_FINDER_SERVICE = "AllPathsFinderService"
 PATH_FINDER_SERVER_PORT = 60037
@@ -41,4 +46,3 @@ CORE_ADDRESS = "127.0.0.1"
 BROADCAST_ADDRESS = "127.0.0.1"
 PATH_FINDER_SERVER_IP = CORE_ADDRESS
 LIGHT_HISTORY_SERVER_IP = CORE_ADDRESS
-#COAP_PORT = 60037

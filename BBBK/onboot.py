@@ -9,5 +9,5 @@ ls = LampSaver()
 p1 = threading.Thread(target=ls.main)
 p1.start()
 
-p2 = threading.Thread(target=live_data_server)
-p2.start()
+#p2 = threading.Thread(target=live_data_server)
+#p2.start()

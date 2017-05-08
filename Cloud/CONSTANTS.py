@@ -13,7 +13,6 @@ SERVICE_PORT = "service_port"
 _GET = "GET"
 data_ = namedtuple("data", "lat, long, als, led, time")
 
-
 IF_NAME = "wlan0"
 LOCAL_NETWORK = '192.168.1.0/24'
 

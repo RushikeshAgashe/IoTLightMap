@@ -49,4 +49,6 @@ def get_live_sensor_data(service_key=LIVE_DATA, multiple_response=True):
     return response
 
 if __name__ == "__main__":
-    get_live_sensor_data()
+    while True:
+        resp = get_live_sensor_data()
+        time.sleep(5)
