@@ -45,7 +45,7 @@ async def _client_get(calling_obj, uri, payload):
     protocol = await Context.create_client_context()
     payload = bytes(payload, 'utf-8')
     request = Message(code=GET, uri=uri, payload=payload)
-    print("\n Coap Client: Request: GET {0} payload={1}".format(uri, payload))
+    #print("\n Coap Client: Request: GET {0} payload={1}".format(uri, payload))
     try:
         response = await protocol.request(request).response
     except Exception as e:
@@ -55,7 +55,7 @@ async def _client_get(calling_obj, uri, payload):
         exit(-1)
     payload = response.payload
     calling_obj.response = payload.decode('utf-8')
-    print("\n Coap Client: Response: {0}".format(calling_obj.response))
+    #print("\n Coap Client: Response: {0}".format(calling_obj.response))
 
 
 def coap_discover_resources(calling_obj=None, ip="localhost", port=COAP_PORT):

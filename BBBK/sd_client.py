@@ -45,7 +45,7 @@ def discover_service(service_key):
         for res in response:
             decoded_response.append((json.loads(res[0].decode('utf-8')), res[1]))
         response = decoded_response
-    print("SD Client Received response response = {0}".format(response))
+    #print("SD Client Received response response = {0}".format(response))
     return response
 
 
