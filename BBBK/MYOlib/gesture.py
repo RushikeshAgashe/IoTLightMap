@@ -95,18 +95,18 @@ class Myo(MyoRaw):
         self.pose_handlers.append(h)
 
     def on_raw_pose(self, pose):
-	if (pose == 1.0):
-	 	print ("Pose 1 - LED UP")
-	elif (pose == 2.0):
-		print ("Ignore this")
-	else:
-		print ("Led Down")
+        if (pose == 1.0):
+            print ("Pose 1 - LED UP")
+        elif (pose == 2.0):
+            print ("Ignore this")
+        else:
+            print ("Led Down")
 
        #for h in self.pose_handlers:
          #   h(pose)
-	  #  return pose
+      #  return pose
 
-if __name__ == '__main__':
+def main():
     import subprocess
     m = Myo(NNClassifier(), sys.argv[1] if len(sys.argv) >= 2 else None)
     m.add_raw_pose_handler(print)
@@ -123,3 +123,6 @@ if __name__ == '__main__':
 
     while True:
         m.run()
+
+if __name__ == '__main__':
+    main()
